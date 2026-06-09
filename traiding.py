@@ -10,13 +10,14 @@ from alpaca.data.requests import StockBarsRequest
 from alpaca.data.timeframe import TimeFrame
 from datetime import datetime
     
-# Ladda miljövariabler från .env-fil
-from dotenv import load_dotenv
-
-load_dotenv()
-
 API_KEY = os.getenv("API_KEY")
 SECRET_KEY = os.getenv("SECRET_KEY")
+
+if not API_KEY:
+    raise ValueError("API_KEY saknas")
+
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY saknas")
 
 print(f"API_KEY={API_KEY[:4]}...")
 
