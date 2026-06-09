@@ -1,7 +1,9 @@
-name: Test script
+name: Run trading script
 
 on:
-  workflow_dispatch:   # gör att du kan starta manuellt
+  workflow_dispatch:   # manuell testkörning
+  schedule:
+    - cron: "0 6 * * *"  # varje dag 06:00 UTC (valfritt)
 
 jobs:
   run:
