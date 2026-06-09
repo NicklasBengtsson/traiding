@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: "3.12"
 
+      - run: ls -la
+
       - run: pip install -r requirements.txt
 
       - run: python traiding.py
